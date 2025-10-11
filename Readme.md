@@ -21,7 +21,11 @@ Kruskal’s algorithm performs the following major operations:
 
 1. **Sorting all edges:** `O(m log m)` → since `m ≤ n²`, this simplifies to `O(m log n)`
 2. **Find and Union operations:** each taking near `O(log n)` on average  
-3. **Total time complexity:** `O(m log n)`
+3. **Total Time Complexity** is **T = O(m log(n) + n log(n))**.
+
+Since for large graphs, m > n, the sorting step dominates. Thus, the time complexity can be simplified as:
+                                   **T= O(m log(m))**
+
 
 ---
 
