@@ -39,6 +39,7 @@ Install the required library using:
 
 ```bash
 pip install matplotlib
+```
 
 ## Running the Code
 
