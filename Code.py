@@ -27,7 +27,7 @@ class DisjointSet:                     #Disjoint Set(Union-Find)
         return True
 
 def kruskal(n, edges):              # Kruskal's Algorithm for MST
-    edges.sort(key=lambda x: x[2])  # Sort by weight - O(m log m)
+    edges.sort(key=lambda x: x[2])  # Sort by weight - O(m log n)
     ds = DisjointSet(n)
     mst_weight = 0
     for u, v, w in edges:
