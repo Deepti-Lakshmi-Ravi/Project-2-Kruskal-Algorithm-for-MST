@@ -4,12 +4,12 @@ import math
 import matplotlib.pyplot as plt
 import unittest
 
-class DisjointSet:                       # Union-Find with path compression and union-by-rank
-   
+ # Union-Find with path compression and union-by-rank
+class DisjointSet:                      
     def __init__(self, n):
         self.parent = list(range(n))
         self.rank = [0] * n
-    
+
     def find(self, x):                   # Find root with path compression
         if self.parent[x] != x:
             self.parent[x] = self.find(self.parent[x])
@@ -31,8 +31,8 @@ class DisjointSet:                       # Union-Find with path compression and 
         
         return True
 
-
-def kruskal(n, edges):                   # Kruskal's algorithm for MST
+ # Kruskal's algorithm for MST
+def kruskal(n, edges):                  
     edges.sort(key=lambda x: x[2])       # Sort by weight O(m log n)
     ds = DisjointSet(n)
     mst_weight = 0
@@ -56,7 +56,8 @@ def theoretical_operations(n):           # Calculate theoretical operations: m *
     m = n * (n - 1) // 2
     return m * math.log2(n)
 
-class TestDisjointSet(unittest.TestCase):  # UNIT TESTS
+# UNIT TESTS
+class TestDisjointSet(unittest.TestCase):  
     
     def test_find_single_element(self):
         ds = DisjointSet(5)
